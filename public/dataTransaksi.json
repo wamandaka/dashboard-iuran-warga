@@ -1,0 +1,22 @@
+[
+  { "id": 1, "nama": "Andi", "jumlah": 150000, "tanggal": "2025-02-01" },
+  { "id": 2, "nama": "Budi", "jumlah": 275000, "tanggal": "2025-02-02" },
+  { "id": 3, "nama": "Citra", "jumlah": 120000, "tanggal": "2025-02-03" },
+  { "id": 4, "nama": "Dewi", "jumlah": 300000, "tanggal": "2025-02-04" },
+  { "id": 5, "nama": "Eka", "jumlah": 45000, "tanggal": "2025-02-05" },
+  { "id": 6, "nama": "Fajar", "jumlah": 98000, "tanggal": "2025-02-06" },
+  { "id": 7, "nama": "Gita", "jumlah": 210000, "tanggal": "2025-02-07" },
+  { "id": 8, "nama": "Hadi", "jumlah": 175000, "tanggal": "2025-02-08" },
+  { "id": 9, "nama": "Indra", "jumlah": 265000, "tanggal": "2025-02-09" },
+  { "id": 10, "nama": "Joko", "jumlah": 150000, "tanggal": "2025-02-10" },
+  { "id": 11, "nama": "Kiki", "jumlah": 320000, "tanggal": "2025-02-11" },
+  { "id": 12, "nama": "Lina", "jumlah": 195000, "tanggal": "2025-02-12" },
+  { "id": 13, "nama": "Mila", "jumlah": 85000, "tanggal": "2025-02-13" },
+  { "id": 14, "nama": "Nino", "jumlah": 410000, "tanggal": "2025-02-14" },
+  { "id": 15, "nama": "Omar", "jumlah": 295000, "tanggal": "2025-02-15" },
+  { "id": 16, "nama": "Putri", "jumlah": 125000, "tanggal": "2025-02-16" },
+  { "id": 17, "nama": "Qory", "jumlah": 50000, "tanggal": "2025-02-17" },
+  { "id": 18, "nama": "Rian", "jumlah": 180000, "tanggal": "2025-02-18" },
+  { "id": 19, "nama": "Sita", "jumlah": 290000, "tanggal": "2025-02-19" },
+  { "id": 20, "nama": "Tono", "jumlah": 345000, "tanggal": "2025-02-20" }
+]

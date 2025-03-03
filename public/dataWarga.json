@@ -1,0 +1,792 @@
+[
+  {
+    "id": 1,
+    "nama": "Budi Santoso",
+    "alamat": "Jl Letjen Haryono MT Ruko Mataram Plasa B-5, Jawa Tengah.",
+    "noHp": "081234567890",
+    "noKK": "3201010101010001",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 2,
+    "nama": "Ani Rahayu",
+    "alamat": "Jl Pahlawan No 10, Surabaya, Jawa Timur.",
+    "noHp": "081234567891",
+    "noKK": "3201010101010002",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 3,
+    "nama": "Cahyo Nugroho",
+    "alamat": "Jl Merdeka No 15, Yogyakarta.",
+    "noHp": "081234567892",
+    "noKK": "3201010101010003",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 4,
+    "nama": "Dewi Lestari",
+    "alamat": "Jl Sudirman No 20, Bandung, Jawa Barat.",
+    "noHp": "081234567893",
+    "noKK": "3201010101010004",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 5,
+    "nama": "Eko Prasetyo",
+    "alamat": "Jl Gatot Subroto No 25, Semarang, Jawa Tengah.",
+    "noHp": "081234567894",
+    "noKK": "3201010101010005",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 6,
+    "nama": "Fitriani",
+    "alamat": "Jl Ahmad Yani No 30, Malang, Jawa Timur.",
+    "noHp": "081234567895",
+    "noKK": "3201010101010006",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 7,
+    "nama": "Guntur Wibowo",
+    "alamat": "Jl Diponegoro No 35, Solo, Jawa Tengah.",
+    "noHp": "081234567896",
+    "noKK": "3201010101010007",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 8,
+    "nama": "Hesti Purnama",
+    "alamat": "Jl Hayam Wuruk No 40, Jakarta Pusat.",
+    "noHp": "081234567897",
+    "noKK": "3201010101010008",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 9,
+    "nama": "Irfan Maulana",
+    "alamat": "Jl S Parman No 45, Medan, Sumatera Utara.",
+    "noHp": "081234567898",
+    "noKK": "3201010101010009",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 10,
+    "nama": "Joko Susilo",
+    "alamat": "Jl Thamrin No 50, Palembang, Sumatera Selatan.",
+    "noHp": "081234567899",
+    "noKK": "3201010101010010",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 11,
+    "nama": "Kartika Sari",
+    "alamat": "Jl Gajah Mada No 55, Denpasar, Bali.",
+    "noHp": "081234567900",
+    "noKK": "3201010101010011",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 12,
+    "nama": "Luki Hermawan",
+    "alamat": "Jl Imam Bonjol No 60, Makassar, Sulawesi Selatan.",
+    "noHp": "081234567901",
+    "noKK": "3201010101010012",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 13,
+    "nama": "Maya Indah",
+    "alamat": "Jl Teuku Umar No 65, Bandar Lampung, Lampung.",
+    "noHp": "081234567902",
+    "noKK": "3201010101010013",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 14,
+    "nama": "Nanda Pratama",
+    "alamat": "Jl Sudirman No 70, Pekanbaru, Riau.",
+    "noHp": "081234567903",
+    "noKK": "3201010101010014",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 15,
+    "nama": "Oki Setiawan",
+    "alamat": "Jl Ahmad Dahlan No 75, Pontianak, Kalimantan Barat.",
+    "noHp": "081234567904",
+    "noKK": "3201010101010015",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 16,
+    "nama": "Putri Ayu",
+    "alamat": "Jl Urip Sumoharjo No 80, Samarinda, Kalimantan Timur.",
+    "noHp": "081234567905",
+    "noKK": "3201010101010016",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 17,
+    "nama": "Rudi Hartono",
+    "alamat": "Jl P Diponegoro No 85, Banjarmasin, Kalimantan Selatan.",
+    "noHp": "081234567906",
+    "noKK": "3201010101010017",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 18,
+    "nama": "Sari Dewi",
+    "alamat": "Jl Jenderal Sudirman No 90, Manado, Sulawesi Utara.",
+    "noHp": "081234567907",
+    "noKK": "3201010101010018",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 19,
+    "nama": "Tono Wijaya",
+    "alamat": "Jl A Yani No 95, Balikpapan, Kalimantan Timur.",
+    "noHp": "081234567908",
+    "noKK": "3201010101010019",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 20,
+    "nama": "Umi Kulsum",
+    "alamat": "Jl Sisingamangaraja No 100, Jayapura, Papua.",
+    "noHp": "081234567909",
+    "noKK": "3201010101010020",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 21,
+    "nama": "Vina Amelia",
+    "alamat": "Jl Pattimura No 105, Ambon, Maluku.",
+    "noHp": "081234567910",
+    "noKK": "3201010101010021",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 22,
+    "nama": "Wahyu Pratama",
+    "alamat": "Jl Sultan Hasanuddin No 110, Kendari, Sulawesi Tenggara.",
+    "noHp": "081234567911",
+    "noKK": "3201010101010022",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 23,
+    "nama": "Yuni Astuti",
+    "alamat": "Jl Jenderal Sudirman No 115, Mataram, Nusa Tenggara Barat.",
+    "noHp": "081234567912",
+    "noKK": "3201010101010023",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 24,
+    "nama": "Zainal Abidin",
+    "alamat": "Jl Ahmad Yani No 120, Kupang, Nusa Tenggara Timur.",
+    "noHp": "081234567913",
+    "noKK": "3201010101010024",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 25,
+    "nama": "Agus Setiawan",
+    "alamat": "Jl Pahlawan No 125, Banda Aceh, Aceh.",
+    "noHp": "081234567914",
+    "noKK": "3201010101010025",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 26,
+    "nama": "Bambang Sutrisno",
+    "alamat": "Jl Teuku Umar No 130, Bengkulu.",
+    "noHp": "081234567915",
+    "noKK": "3201010101010026",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 27,
+    "nama": "Citra Dewi",
+    "alamat": "Jl S Parman No 135, Jambi.",
+    "noHp": "081234567916",
+    "noKK": "3201010101010027",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 28,
+    "nama": "Dodi Kurniawan",
+    "alamat": "Jl Gatot Subroto No 140, Pangkal Pinang, Bangka Belitung.",
+    "noHp": "081234567917",
+    "noKK": "3201010101010028",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 29,
+    "nama": "Eka Putri",
+    "alamat": "Jl Diponegoro No 145, Tanjung Pinang, Kepulauan Riau.",
+    "noHp": "081234567918",
+    "noKK": "3201010101010029",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 30,
+    "nama": "Fajar Nugraha",
+    "alamat": "Jl Jenderal Sudirman No 150, Gorontalo.",
+    "noHp": "081234567919",
+    "noKK": "3201010101010030",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 31,
+    "nama": "Gita Puspita",
+    "alamat": "Jl A Yani No 155, Palu, Sulawesi Tengah.",
+    "noHp": "081234567920",
+    "noKK": "3201010101010031",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 32,
+    "nama": "Hendra Wijaya",
+    "alamat": "Jl Pattimura No 160, Ternate, Maluku Utara.",
+    "noHp": "081234567921",
+    "noKK": "3201010101010032",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 33,
+    "nama": "Indra Saputra",
+    "alamat": "Jl Sultan Hasanuddin No 165, Sofifi, Maluku Utara.",
+    "noHp": "081234567922",
+    "noKK": "3201010101010033",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 34,
+    "nama": "Jihan Aulia",
+    "alamat": "Jl Jenderal Sudirman No 170, Tidore, Maluku Utara.",
+    "noHp": "081234567923",
+    "noKK": "3201010101010034",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 35,
+    "nama": "Kiki Setiawan",
+    "alamat": "Jl Ahmad Yani No 175, Tual, Maluku.",
+    "noHp": "081234567924",
+    "noKK": "3201010101010035",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 36,
+    "nama": "Lina Marlina",
+    "alamat": "Jl Pahlawan No 180, Saumlaki, Maluku.",
+    "noHp": "081234567925",
+    "noKK": "3201010101010036",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 37,
+    "nama": "Miko Wijaya",
+    "alamat": "Jl Teuku Umar No 185, Fakfak, Papua Barat.",
+    "noHp": "081234567926",
+    "noKK": "3201010101010037",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 38,
+    "nama": "Nina Sari",
+    "alamat": "Jl S Parman No 190, Sorong, Papua Barat.",
+    "noHp": "081234567927",
+    "noKK": "3201010101010038",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 39,
+    "nama": "Oscar Pratama",
+    "alamat": "Jl Gatot Subroto No 195, Manokwari, Papua Barat.",
+    "noHp": "081234567928",
+    "noKK": "3201010101010039",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 40,
+    "nama": "Putra Ramadhan",
+    "alamat": "Jl Diponegoro No 200, Jayapura, Papua.",
+    "noHp": "081234567929",
+    "noKK": "3201010101010040",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 41,
+    "nama": "Qori Aulia",
+    "alamat": "Jl Jenderal Sudirman No 205, Merauke, Papua.",
+    "noHp": "081234567930",
+    "noKK": "3201010101010041",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 42,
+    "nama": "Rizki Amelia",
+    "alamat": "Jl A Yani No 210, Biak, Papua.",
+    "noHp": "081234567931",
+    "noKK": "3201010101010042",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 43,
+    "nama": "Sandi Nugraha",
+    "alamat": "Jl Pattimura No 215, Nabire, Papua.",
+    "noHp": "081234567932",
+    "noKK": "3201010101010043",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 44,
+    "nama": "Tika Wulandari",
+    "alamat": "Jl Sultan Hasanuddin No 220, Timika, Papua.",
+    "noHp": "081234567933",
+    "noKK": "3201010101010044",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 45,
+    "nama": "Umar Said",
+    "alamat": "Jl Jenderal Sudirman No 225, Wamena, Papua.",
+    "noHp": "081234567934",
+    "noKK": "3201010101010045",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 46,
+    "nama": "Vivi Anggraini",
+    "alamat": "Jl Ahmad Yani No 230, Serui, Papua.",
+    "noHp": "081234567935",
+    "noKK": "3201010101010046",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 47,
+    "nama": "Wahid Hasyim",
+    "alamat": "Jl Pahlawan No 235, Tanah Merah, Papua.",
+    "noHp": "081234567936",
+    "noKK": "3201010101010047",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 48,
+    "nama": "Yoga Pratama",
+    "alamat": "Jl Teuku Umar No 240, Kepi, Papua.",
+    "noHp": "081234567937",
+    "noKK": "3201010101010048",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 49,
+    "nama": "Zahra Fitriani",
+    "alamat": "Jl S Parman No 245, Agats, Papua.",
+    "noHp": "081234567938",
+    "noKK": "3201010101010049",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 50,
+    "nama": "Ahmad Fauzi",
+    "alamat": "Jl Gatot Subroto No 250, Sarmi, Papua.",
+    "noHp": "081234567939",
+    "noKK": "3201010101010050",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 51,
+    "nama": "Bella Sari",
+    "alamat": "Jl Diponegoro No 255, Yahukimo, Papua.",
+    "noHp": "081234567940",
+    "noKK": "3201010101010051",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 52,
+    "nama": "Candra Wijaya",
+    "alamat": "Jl Jenderal Sudirman No 260, Pegunungan Bintang, Papua.",
+    "noHp": "081234567941",
+    "noKK": "3201010101010052",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 53,
+    "nama": "Dina Puspita",
+    "alamat": "Jl A Yani No 265, Mamberamo Tengah, Papua.",
+    "noHp": "081234567942",
+    "noKK": "3201010101010053",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 54,
+    "nama": "Eko Saputra",
+    "alamat": "Jl Pattimura No 270, Mamberamo Raya, Papua.",
+    "noHp": "081234567943",
+    "noKK": "3201010101010054",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 55,
+    "nama": "Fani Amelia",
+    "alamat": "Jl Sultan Hasanuddin No 275, Supiori, Papua.",
+    "noHp": "081234567944",
+    "noKK": "3201010101010055",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 56,
+    "nama": "Guntur Setiawan",
+    "alamat": "Jl Jenderal Sudirman No 280, Tolikara, Papua.",
+    "noHp": "081234567945",
+    "noKK": "3201010101010056",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 57,
+    "nama": "Hani Puspita",
+    "alamat": "Jl Ahmad Yani No 285, Yalimo, Papua.",
+    "noHp": "081234567946",
+    "noKK": "3201010101010057",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 58,
+    "nama": "Irfan Setiawan",
+    "alamat": "Jl Pahlawan No 290, Lanny Jaya, Papua.",
+    "noHp": "081234567947",
+    "noKK": "3201010101010058",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 59,
+    "nama": "Jihan Aulia",
+    "alamat": "Jl Teuku Umar No 295, Nduga, Papua.",
+    "noHp": "081234567948",
+    "noKK": "3201010101010059",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 60,
+    "nama": "Kiki Setiawan",
+    "alamat": "Jl S Parman No 300, Puncak, Papua.",
+    "noHp": "081234567949",
+    "noKK": "3201010101010060",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 61,
+    "nama": "Lina Marlina",
+    "alamat": "Jl Gatot Subroto No 305, Dogiyai, Papua.",
+    "noHp": "081234567950",
+    "noKK": "3201010101010061",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 62,
+    "nama": "Miko Wijaya",
+    "alamat": "Jl Diponegoro No 310, Intan Jaya, Papua.",
+    "noHp": "081234567951",
+    "noKK": "3201010101010062",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 63,
+    "nama": "Nina Sari",
+    "alamat": "Jl Jenderal Sudirman No 315, Deiyai, Papua.",
+    "noHp": "081234567952",
+    "noKK": "3201010101010063",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 64,
+    "nama": "Oscar Pratama",
+    "alamat": "Jl A Yani No 320, Puncak Jaya, Papua.",
+    "noHp": "081234567953",
+    "noKK": "3201010101010064",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 65,
+    "nama": "Putra Ramadhan",
+    "alamat": "Jl Pattimura No 325, Mimika, Papua.",
+    "noHp": "081234567954",
+    "noKK": "3201010101010065",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 66,
+    "nama": "Qori Aulia",
+    "alamat": "Jl Sultan Hasanuddin No 330, Boven Digoel, Papua.",
+    "noHp": "081234567955",
+    "noKK": "3201010101010066",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 67,
+    "nama": "Rizki Amelia",
+    "alamat": "Jl Jenderal Sudirman No 335, Mappi, Papua.",
+    "noHp": "081234567956",
+    "noKK": "3201010101010067",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 68,
+    "nama": "Sandi Nugraha",
+    "alamat": "Jl Ahmad Yani No 340, Asmat, Papua.",
+    "noHp": "081234567957",
+    "noKK": "3201010101010068",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 69,
+    "nama": "Tika Wulandari",
+    "alamat": "Jl Pahlawan No 345, Yahukimo, Papua.",
+    "noHp": "081234567958",
+    "noKK": "3201010101010069",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 70,
+    "nama": "Umar Said",
+    "alamat": "Jl Teuku Umar No 350, Pegunungan Bintang, Papua.",
+    "noHp": "081234567959",
+    "noKK": "3201010101010070",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 71,
+    "nama": "Vivi Anggraini",
+    "alamat": "Jl S Parman No 355, Mamberamo Tengah, Papua.",
+    "noHp": "081234567960",
+    "noKK": "3201010101010071",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 72,
+    "nama": "Wahid Hasyim",
+    "alamat": "Jl Gatot Subroto No 360, Mamberamo Raya, Papua.",
+    "noHp": "081234567961",
+    "noKK": "3201010101010072",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 73,
+    "nama": "Yoga Pratama",
+    "alamat": "Jl Diponegoro No 365, Supiori, Papua.",
+    "noHp": "081234567962",
+    "noKK": "3201010101010073",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 74,
+    "nama": "Zahra Fitriani",
+    "alamat": "Jl Jenderal Sudirman No 370, Tolikara, Papua.",
+    "noHp": "081234567963",
+    "noKK": "3201010101010074",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 75,
+    "nama": "Ahmad Fauzi",
+    "alamat": "Jl A Yani No 375, Yalimo, Papua.",
+    "noHp": "081234567964",
+    "noKK": "3201010101010075",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  },
+  {
+    "id": 76,
+    "nama": "Bella Sari",
+    "alamat": "Jl Pattimura No 380, Lanny Jaya, Papua.",
+    "noHp": "081234567965",
+    "noKK": "3201010101010076",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 15000
+  },
+  {
+    "id": 77,
+    "nama": "Candra Wijaya",
+    "alamat": "Jl Sultan Hasanuddin No 385, Nduga, Papua.",
+    "noHp": "081234567966",
+    "noKK": "3201010101010077",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 20000
+  },
+  {
+    "id": 78,
+    "nama": "Dina Puspita",
+    "alamat": "Jl Jenderal Sudirman No 390, Puncak, Papua.",
+    "noHp": "081234567967",
+    "noKK": "3201010101010078",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 25000
+  },
+  {
+    "id": 79,
+    "nama": "Eko Saputra",
+    "alamat": "Jl Ahmad Yani No 395, Dogiyai, Papua.",
+    "noHp": "081234567968",
+    "noKK": "3201010101010079",
+    "biayaKebersihan": 50000,
+    "biayaKeamanan": 75000,
+    "infaq": 30000
+  }
+]
