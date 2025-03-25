@@ -5,26 +5,30 @@ import TableDataTransaksi from "../../components/Transaksi/TableDataTransaksi";
 import type { Transaksi } from "../../types/transaksi";
 import { useEffect, useState } from "react";
 import Pagination from "../../components/Pagination";
+import { useAtom } from "jotai";
+import { loadableTransaksiAtom, transaksiAtom } from "../../atoms/dataAtoms";
+import logger from "../../utils/logger";
 
 const Transaksi = () => {
-  const [dataTransaksi, setDataTransaksi] = useState<Transaksi[]>([]);
+  // const [dataTransaksi, setDataTransaksi] = useState<Transaksi[]>([]);
+  const [dataTransaksi, setDataTransaksi] = useAtom(transaksiAtom);
+  const [loadableTransaksi] = useAtom(loadableTransaksiAtom);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState<number>(10);
 
-  const fetchDataTransaksi = async () => {
-    try {
-      const resp = await fetch("/dataTransaksi.json");
-      const data = await resp.json();
-      setDataTransaksi(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchDataTransaksi();
-  }, []);
+    if (loadableTransaksi.state === "loading") {
+      setIsLoading(true);
+    } else if (loadableTransaksi.state === "hasData") {
+      setDataTransaksi(loadableTransaksi.data);
+      setIsLoading(false);
+    } else if (loadableTransaksi.state === "hasError") {
+      logger.error("Error fetching data", loadableTransaksi.error);
+      setIsLoading(false);
+    }
+  }, [loadableTransaksi, setDataTransaksi]);
 
   const filteredData = dataTransaksi.filter(
     (item) => item.nama.toLowerCase().includes(searchTerm.toLowerCase())
@@ -74,25 +78,25 @@ const Transaksi = () => {
 
       {/* table */}
       <div className="w-full bg-white">
-        {/* {isLoading ? (
+        {isLoading ? (
           <>
             <p>loading...</p>
           </>
         ) : (
-          <> */}
-        <TableDataTransaksi dataTransaksi={currentItems} />
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-          indexOfFirstItem={indexOfFirstItem}
-          indexOfLastItem={indexOfLastItem}
-          filteredData={filteredData}
-          perPage={perPage}
-          setPerPage={setPerPage}
-        />
-        {/* </>
-        )} */}
+          <>
+            <TableDataTransaksi dataTransaksi={currentItems} />
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+              indexOfFirstItem={indexOfFirstItem}
+              indexOfLastItem={indexOfLastItem}
+              filteredData={filteredData}
+              perPage={perPage}
+              setPerPage={setPerPage}
+            />
+          </>
+        )}
       </div>
     </PageContainerDashboard>
   );
