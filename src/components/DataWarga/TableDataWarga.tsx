@@ -4,9 +4,11 @@ import { Warga } from "../../types/warga";
 const TableDataWarga = ({
   currentItems,
   onEdit,
+  deleteWarga,
 }: {
   currentItems: Warga[];
   onEdit: (warga: Warga) => void;
+  deleteWarga: (id: number) => void;
 }) => {
   return (
     <div>
@@ -54,7 +56,10 @@ const TableDataWarga = ({
                 </td>
                 <td className="px-4 py-2 min-w-[200px]">{item.infaq}</td>
                 <td className="px-4 py-2 whitespace-nowrap space-x-4">
-                  <button className="cursor-pointer">
+                  <button
+                    onClick={() => deleteWarga(item.id)}
+                    className="cursor-pointer"
+                  >
                     <HiOutlineTrash size={20} />
                   </button>
                   <button
