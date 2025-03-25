@@ -1,11 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedNameLink, setSelectedNameLink] = useState("");
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (!token) {
+      window.location.href = "/lgdsb";
+    }
+  }, [token]);
 
   const handleSelectedName = (name: string) => {
     setSelectedNameLink(name);
