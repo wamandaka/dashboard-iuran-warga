@@ -1,8 +1,16 @@
 import React from "react";
 
-const PageContainer = ({ children }: { children: React.ReactNode }) => {
+const PageContainer = ({
+  children,
+  variant,
+}: {
+  children: React.ReactNode;
+  variant?: string;
+}) => {
   return (
-    <div className="flex flex-col min-h-[800px] max-w-[430px] mx-auto bg-slate-100 pb-32 md:shadow-2xl relative">
+    <div
+      className={`flex min-h-screen sm:min-h-[768px] max-w-[430px] mx-auto ${variant} pb-32 md:shadow-2xl relative rounded-2xl`}
+    >
       {children}
     </div>
   );
