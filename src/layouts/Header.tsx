@@ -16,7 +16,7 @@ const Header = ({
         <div className="flex items-center justify-between lg:min-w-60">
           {/* logo */}
           <div className="flex items-center justify-start border-gray-200">
-            <a href="/" className="flex ml-2">
+            <a href="/dsb" className="flex ml-2">
               <img src={Logo} className="h-10" alt="JakMen Logo" />
             </a>
           </div>
