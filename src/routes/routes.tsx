@@ -9,6 +9,8 @@ import LoginDashboard from "../pages/Auth/Admin/Login";
 import LoginWarga from "../pages/Auth/Warga/Login";
 import Checkout from "../pages/Checkout";
 import Pembayaran from "../pages/Pembayaran";
+import RiwayatPembayaran from "../pages/RiwayatPembayaran";
+import NotFoundPage from "../components/NotFoundPage";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +20,7 @@ const AppRoutes = () => {
           <Route path="/" element={<LoginWarga />} />
           <Route path="/checkout/:nohp" element={<Checkout />} />
           <Route path="/pembayaran/:nohp" element={<Pembayaran />} />
+          <Route path="/info-warga" element={<RiwayatPembayaran />} />
           <Route path="/lgdsb" element={<LoginDashboard />} />
           <Route path="/dsb" element={<Layout />}>
             <Route index element={<Dashboard />} />
@@ -26,7 +29,7 @@ const AppRoutes = () => {
             <Route path="prfl" element={<Profil />} />
             <Route path="pgtrn" element={<Pengaturan />} />
           </Route>
-          <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
