@@ -4,7 +4,6 @@ import {
   HiOutlineBanknotes,
   HiOutlineUserCircle,
   HiOutlinePresentationChartLine,
-  HiOutlineCog6Tooth,
 } from "react-icons/hi2";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
@@ -34,12 +33,6 @@ const sidebarItems = [
     path: "/dsb/prfl",
     icon: <HiOutlineUserCircle size={20} />,
   },
-  {
-    id: 5,
-    title: "Pengaturan",
-    path: "/dsb/pgtrn",
-    icon: <HiOutlineCog6Tooth size={20} />,
-  },
 ];
 
 const Sidebar = ({
@@ -63,6 +56,11 @@ const Sidebar = ({
 
   const handleActiveLink = (index: number) => {
     setActiveLink(index);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/lgdsb";
   };
 
   return (
@@ -107,7 +105,10 @@ const Sidebar = ({
         </ul>
 
         {/* logout */}
-        <button className="flex items-center w-[calc(100%-1.5rem)] text-base font-normal text-gray-900 transition duration-75 hover:bg-primary rounded-md hover:text-white cursor-pointer absolute bottom-5">
+        <button
+          onClick={handleLogout}
+          className="flex items-center w-[calc(100%-1.5rem)] text-base font-normal text-gray-900 transition duration-75 hover:bg-primary rounded-md hover:text-white cursor-pointer absolute bottom-5"
+        >
           <div className="flex items-center p-2">
             <span className="w-6 h-6 flex items-center justify-center">
               <HiOutlineLogout size={20} />
