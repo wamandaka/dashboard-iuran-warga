@@ -1,28 +1,20 @@
-import { Link, useParams } from "react-router-dom";
-import PageContainer from "../../components/PageContainer";
-import { HiChevronLeft } from "react-icons/hi2";
+import { useParams } from "react-router-dom";
+import PembayaranPending from "../../components/Pembayaran/PembayaranPending";
+import { useState } from "react";
+import PembayaranSuccess from "../../components/Pembayaran/PembayaranSuccess";
 
 const Pembayaran = () => {
+  const [statusPembayaran] = useState("pending");
   const { nohp } = useParams();
+  const noHpNumber = nohp ? parseInt(nohp) : null;
+
   return (
-    <div>
-      <PageContainer>
-        <div className="w-full bg-primary text-white p-4 flex items-center gap-3">
-          <Link to={`/checkout/${nohp}`}>
-            <HiChevronLeft size={20} />
-          </Link>
-          <p className="font-semibold">Pembayaran</p>
-        </div>
-        <div className="w-full bg-white p-4 absolute bottom-0">
-          <button
-            // onClick={handleCheckout}
-            className="bg-primary text-white py-2 rounded-md w-full cursor-pointer"
-          >
-            Selesai
-          </button>
-        </div>
-      </PageContainer>
-    </div>
+    <>
+      {statusPembayaran === "pending" && (
+        <PembayaranPending nohp={noHpNumber ?? 0} />
+      )}
+      {statusPembayaran === "success" && <PembayaranSuccess />}
+    </>
   );
 };
 
