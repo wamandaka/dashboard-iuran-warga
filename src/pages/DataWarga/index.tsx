@@ -7,9 +7,13 @@ import FormTambahWarga from "../../components/DataWarga/FormTambahWarga";
 import { Warga } from "../../types/warga";
 import TableDataWarga from "../../components/DataWarga/TableDataWarga";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
+import { useAtom } from "jotai";
+import { loadableWargaAtom, wargaAtom } from "../../atoms/dataAtoms";
+import logger from "../../utils/logger";
 
 const DataWarga = () => {
-  const [data, setData] = useState<Warga[]>([]);
+  const [data, setData] = useAtom(wargaAtom);
+  const [loadableWarga] = useAtom(loadableWargaAtom);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState<number>(10);
@@ -48,22 +52,18 @@ const DataWarga = () => {
     setShowForm(!showForm);
   };
 
-  const fetchDataWarga = async () => {
-    setIsLoading(true);
-    try {
-      const resp = await fetch("/dataWarga.json");
-      const data = await resp.json();
-      setData(data);
+  // Load data warga dari atom
+  useEffect(() => {
+    if (loadableWarga.state === "loading") {
+      setIsLoading(true);
+    } else if (loadableWarga.state === "hasData") {
+      setData(loadableWarga.data);
       setIsLoading(false);
-    } catch (error) {
-      console.log(error);
+    } else if (loadableWarga.state === "hasError") {
+      logger.error("Error fetching warga", loadableWarga.error);
       setIsLoading(false);
     }
-  };
-
-  useEffect(() => {
-    fetchDataWarga();
-  }, []);
+  }, [loadableWarga, setData]);
 
   // Handler input form
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,6 +92,11 @@ const DataWarga = () => {
     const updatedData = data.map((w) => (w.id === newWarga.id ? newWarga : w));
     setData(updatedData);
     setShowForm(!showForm); // Tutup form
+  };
+
+  const deleteWarga = (id: number) => {
+    const updatedData = data.filter((w) => w.id !== id);
+    setData(updatedData);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -176,6 +181,7 @@ const DataWarga = () => {
               ) : (
                 <>
                   <TableDataWarga
+                    deleteWarga={deleteWarga}
                     currentItems={currentItems}
                     onEdit={handleShowForm}
                   />
