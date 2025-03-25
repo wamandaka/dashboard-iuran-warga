@@ -5,23 +5,39 @@ import DashboardChart from "../../components/Dashboard/DashboardChart";
 import { DataChart } from "../../types/dashboard";
 import { useEffect, useState } from "react";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
+import logger from "../../utils/logger";
+import { loadableDataChartDashboardAtom } from "../../atoms/dataAtoms";
+import { useAtom } from "jotai";
 
 const Dashboard = () => {
   const [chartData, setChartData] = useState<DataChart[]>([]);
+  const [loadableDataChartDashboard] = useAtom(loadableDataChartDashboardAtom);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const fetchDataChart = async () => {
-    try {
-      const resp = await fetch("/chartDashboard.json");
-      const data = await resp.json();
-      setChartData(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const fetchDataChart = async () => {
+  //   try {
+  //     const resp = await fetch("/chartDashboard.json");
+  //     const data = await resp.json();
+  //     setChartData(data);
+  //   } catch (error) {
+  //     logger.error("Error fetching chart data", error);
+  //   }
+  // };
 
   useEffect(() => {
-    fetchDataChart();
-  }, []);
+    if (loadableDataChartDashboard.state === "loading") {
+      setIsLoading(true);
+    } else if (loadableDataChartDashboard.state === "hasData") {
+      setIsLoading(false);
+      setChartData(loadableDataChartDashboard.data);
+    } else if (loadableDataChartDashboard.state === "hasError") {
+      setIsLoading(false);
+      logger.error(
+        "Error loading chart data",
+        loadableDataChartDashboard.error
+      );
+    }
+  }, [loadableDataChartDashboard, setChartData]);
 
   return (
     <PageContainerDashboard>
@@ -118,6 +134,7 @@ const Dashboard = () => {
               </button>
             </div>
             <p className="my-5">Dalam Rupiah</p>
+            {isLoading && <p>Loading...</p>}
             <DashboardChart chartData={chartData} />
           </div>
         </div>
