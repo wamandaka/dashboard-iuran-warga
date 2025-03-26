@@ -111,10 +111,17 @@ const LoginDashboard = () => {
     toast.success("Login berhasil");
     logger.info("Login berhasil", user);
 
-    // Redirect ke dashboard setelah 2 detik
-    setTimeout(() => {
-      navigate("/dsb");
-    }, 2000);
+    if (user.role === "admin" || user.role === "operator") {
+      // Redirect ke dashboard setelah 2 detik
+      setTimeout(() => {
+        navigate("/dsb");
+      }, 2000);
+    } else if (user.role === "finance") {
+      // Redirect ke dashboard setelah 2 detik
+      setTimeout(() => {
+        navigate("/dsb/trsksi");
+      }, 2000);
+    }
   };
 
   return (
