@@ -55,7 +55,7 @@ const Transaksi = () => {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between p-4 bg-white">
+      <div className="w-full flex flex-col md:flex-row justify-between p-4 bg-white gap-5">
         {/* search */}
         <div className="flex items-center border border-gray-300 rounded-md px-2 w-full md:w-1/2">
           <span className="text-slate-400">
@@ -70,7 +70,7 @@ const Transaksi = () => {
           />
         </div>
         {/* export */}
-        <button className="border border-gray-300 items-center gap-2 rounded-md py-1 px-3 cursor-pointer hidden md:flex">
+        <button className="border border-gray-300 items-center gap-2 rounded-md py-1 px-3 cursor-pointer flex w-28 justify-center">
           <CiExport />
           Export
         </button>
