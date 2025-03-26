@@ -1,9 +1,5 @@
 import { useAtom } from "jotai";
-import {
-  emailAtom,
-  passwordAtom,
-  errorAtom,
-} from "../../../atoms/authAtoms";
+import { emailAtom, passwordAtom, errorAtom } from "../../../atoms/authAtoms";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { useState } from "react";
 import logo from "../../../assets/logo.png";
@@ -104,7 +100,8 @@ const FormLogin = ({
           </div>
           <div className="flex justify-end">
             <button
-              onClick={onForgotPassword}
+              // onClick={onForgotPassword}
+              onMouseDown={onForgotPassword}
               className="text-primary font-semibold cursor-pointer"
             >
               Lupa kata sandi?
