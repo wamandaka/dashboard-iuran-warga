@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nama": "Andi Wijaya",
+    "email": "andi.wijaya@example.com",
+    "alamat": "Jl. Merdeka No. 10",
+    "no_hp": "081234567890",
+    "status": "waiting",
+    "rt": "01",
+    "rw": "05"
+  },
+  {
+    "id": 2,
+    "nama": "Budi Santoso",
+    "email": "budi.santoso@example.com",
+    "alamat": "Jl. Sudirman No. 15",
+    "no_hp": "082345678901",
+    "status": "approved",
+    "rt": "02",
+    "rw": "05"
+  },
+  {
+    "id": 3,
+    "nama": "Citra Dewi",
+    "email": "citra.dewi@example.com",
+    "alamat": "Jl. Gatot Subroto No. 20",
+    "no_hp": "083456789012",
+    "status": "rejected",
+    "rt": "03",
+    "rw": "05"
+  },
+  {
+    "id": 4,
+    "nama": "Dian Pratama",
+    "email": "dian.pratama@example.com",
+    "alamat": "Jl. Thamrin No. 25",
+    "no_hp": "084567890123",
+    "status": "waiting",
+    "rt": "04",
+    "rw": "05"
+  },
+  {
+    "id": 5,
+    "nama": "Eka Putri",
+    "email": "eka.putri@example.com",
+    "alamat": "Jl. Hayam Wuruk No. 30",
+    "no_hp": "085678901234",
+    "status": "approved",
+    "rt": "01",
+    "rw": "06"
+  },
+  {
+    "id": 6,
+    "nama": "Fajar Nugroho",
+    "email": "fajar.nugroho@example.com",
+    "alamat": "Jl. Kebon Sirih No. 35",
+    "no_hp": "086789012345",
+    "status": "rejected",
+    "rt": "02",
+    "rw": "06"
+  },
+  {
+    "id": 7,
+    "nama": "Gita Sari",
+    "email": "gita.sari@example.com",
+    "alamat": "Jl. Diponegoro No. 40",
+    "no_hp": "087890123456",
+    "status": "waiting",
+    "rt": "03",
+    "rw": "06"
+  },
+  {
+    "id": 8,
+    "nama": "Hendra Kurniawan",
+    "email": "hendra.kurniawan@example.com",
+    "alamat": "Jl. Pahlawan No. 45",
+    "no_hp": "088901234567",
+    "status": "approved",
+    "rt": "04",
+    "rw": "06"
+  },
+  {
+    "id": 9,
+    "nama": "Indah Permata",
+    "email": "indah.permata@example.com",
+    "alamat": "Jl. Juanda No. 50",
+    "no_hp": "089012345678",
+    "status": "rejected",
+    "rt": "01",
+    "rw": "07"
+  },
+  {
+    "id": 10,
+    "nama": "Joko Susilo",
+    "email": "joko.susilo@example.com",
+    "alamat": "Jl. Ahmad Yani No. 55",
+    "no_hp": "081123456789",
+    "status": "waiting",
+    "rt": "02",
+    "rw": "07"
+  },
+  {
+    "id": 11,
+    "nama": "Kartika Wulandari",
+    "email": "kartika.wulandari@example.com",
+    "alamat": "Jl. Surya Kencana No. 60",
+    "no_hp": "082234567890",
+    "status": "approved",
+    "rt": "03",
+    "rw": "07"
+  },
+  {
+    "id": 12,
+    "nama": "Luki Hermawan",
+    "email": "luki.hermawan@example.com",
+    "alamat": "Jl. Cendrawasih No. 65",
+    "no_hp": "083345678901",
+    "status": "rejected",
+    "rt": "04",
+    "rw": "07"
+  },
+  {
+    "id": 13,
+    "nama": "Maya Indah",
+    "email": "maya.indah@example.com",
+    "alamat": "Jl. Anggrek No. 70",
+    "no_hp": "084456789012",
+    "status": "waiting",
+    "rt": "01",
+    "rw": "08"
+  },
+  {
+    "id": 14,
+    "nama": "Nugroho Saputra",
+    "email": "nugroho.saputra@example.com",
+    "alamat": "Jl. Mawar No. 75",
+    "no_hp": "085567890123",
+    "status": "approved",
+    "rt": "02",
+    "rw": "08"
+  },
+  {
+    "id": 15,
+    "nama": "Oki Setiawan",
+    "email": "oki.setiawan@example.com",
+    "alamat": "Jl. Melati No. 80",
+    "no_hp": "086678901234",
+    "status": "rejected",
+    "rt": "03",
+    "rw": "08"
+  },
+  {
+    "id": 16,
+    "nama": "Putri Ayu",
+    "email": "putri.ayu@example.com",
+    "alamat": "Jl. Kenanga No. 85",
+    "no_hp": "087789012345",
+    "status": "waiting",
+    "rt": "04",
+    "rw": "08"
+  },
+  {
+    "id": 17,
+    "nama": "Rudi Hartono",
+    "email": "rudi.hartono@example.com",
+    "alamat": "Jl. Flamboyan No. 90",
+    "no_hp": "088890123456",
+    "status": "approved",
+    "rt": "01",
+    "rw": "09"
+  },
+  {
+    "id": 18,
+    "nama": "Siti Rahayu",
+    "email": "siti.rahayu@example.com",
+    "alamat": "Jl. Teratai No. 95",
+    "no_hp": "089901234567",
+    "status": "rejected",
+    "rt": "02",
+    "rw": "09"
+  },
+  {
+    "id": 19,
+    "nama": "Tono Prakoso",
+    "email": "tono.prakoso@example.com",
+    "alamat": "Jl. Kamboja No. 100",
+    "no_hp": "081012345678",
+    "status": "waiting",
+    "rt": "03",
+    "rw": "09"
+  },
+  {
+    "id": 20,
+    "nama": "Umi Kalsum",
+    "email": "umi.kalsum@example.com",
+    "alamat": "Jl. Soka No. 105",
+    "no_hp": "082123456789",
+    "status": "approved",
+    "rt": "04",
+    "rw": "09"
+  }
+]
