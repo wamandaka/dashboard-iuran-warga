@@ -2,6 +2,7 @@ import React from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { Warga } from "../types/warga";
 import { Transaksi } from "../types/transaksi";
+import { ListUser } from "../types/listUser";
 
 interface PaginationProps {
   currentPage: number;
@@ -9,7 +10,7 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
   indexOfFirstItem: number;
   indexOfLastItem: number;
-  filteredData: Warga[] | Transaksi[];
+  filteredData: Warga[] | Transaksi[] | ListUser[];
   perPage: number;
   setPerPage: React.Dispatch<React.SetStateAction<number>>;
 }
