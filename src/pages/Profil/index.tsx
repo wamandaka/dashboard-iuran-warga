@@ -1,7 +1,14 @@
 import { HiOutlinePencil, HiPencilSquare } from "react-icons/hi2";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
+import { useState } from "react";
 
 const Profil = () => {
+  const [ubahSandi, setUbahSandi] = useState(false);
+
+  const handleUbahSandi = () => {
+    setUbahSandi(!ubahSandi);
+  };
+
   return (
     <PageContainerDashboard>
       <div className="p-4 bg-white rounded-md shadow-md mt-14 pb-20  md:h-full">
@@ -37,7 +44,10 @@ const Profil = () => {
                 <HiPencilSquare size={20} />
                 Pilih Foto
               </button>
-              <button className="text-primary text-sm font-medium mt-2 cursor-pointer">
+              <button
+                onClick={handleUbahSandi}
+                className="text-primary text-sm font-medium mt-2 cursor-pointer"
+              >
                 Ganti Kata Sandi
               </button>
             </div>
@@ -87,6 +97,88 @@ const Profil = () => {
           </div>
         </div>
       </div>
+
+      {ubahSandi && (
+        <>
+          <div
+            onClick={handleUbahSandi}
+            className="w-full h-screen flex justify-center items-center bg-black/30 absolute top-0 left-0 z-50"
+          ></div>
+          <div className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 fixed">
+            <div className="w-lg bg-white rounded-md">
+              {/* header */}
+              <div className="w-full p-4 flex items-center justify-between">
+                <p className="text-lg font-semibold">Ganti Kata Sandi</p>
+                <button
+                  onClick={handleUbahSandi}
+                  className="text-gray-500 text-2xl cursor-pointer"
+                >
+                  &times;
+                </button>
+              </div>
+              <div className="w-full h-0.5 bg-gray-200"></div>
+              {/* form */}
+              <form action="">
+                <div className="p-4">
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="password"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Kata Sandi Lama
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="border border-gray-300 rounded-md p-2 outline-none"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-3">
+                    <label
+                      htmlFor="password"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Kata Sandi Baru
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="border border-gray-300 rounded-md p-2 outline-none"
+                    />
+                  </div>
+                  <div className="flex flex-col mt-3">
+                    <label
+                      htmlFor="password"
+                      className="text-sm font-medium mb-1"
+                    >
+                      Konfirmasi Kata Sandi Baru
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="border border-gray-300 rounded-md p-2 outline-none"
+                    />
+                  </div>
+                </div>
+                <div className="w-full flex justify-end p-4 gap-5">
+                  <button
+                    onClick={handleUbahSandi}
+                    className="text-red-500 cursor-pointer"
+                  >
+                    Batalkan
+                  </button>
+                  <button className="bg-primary text-white px-5 py-2 rounded-md cursor-pointer">
+                    Ubah Kata Sandi
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
     </PageContainerDashboard>
   );
 };
