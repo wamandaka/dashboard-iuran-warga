@@ -2,11 +2,15 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { useEffect, useState } from "react";
+import { userRoleAtom } from "../atoms/authAtoms";
+import { useAtom } from "jotai";
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedNameLink, setSelectedNameLink] = useState("");
   const token = localStorage.getItem("token");
+  const [userRole] = useAtom(userRoleAtom);
+
   useEffect(() => {
     if (!token) {
       window.location.href = "/lgdsb";
@@ -30,6 +34,7 @@ const Layout = () => {
         isOpen={isOpen}
         handleSelectedName={handleSelectedName}
         toggleSidebar={toggleSidebar}
+        role={userRole}
       />
       <div className="w-full lg:pl-64">
         <Outlet />
