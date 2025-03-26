@@ -8,11 +8,19 @@ import PageContainerDashboard from "../../components/PageContainerDashboard";
 import logger from "../../utils/logger";
 import { loadableDataChartDashboardAtom } from "../../atoms/dataAtoms";
 import { useAtom } from "jotai";
+import { userRoleAtom } from "../../atoms/authAtoms";
 
 const Dashboard = () => {
   const [chartData, setChartData] = useState<DataChart[]>([]);
   const [loadableDataChartDashboard] = useAtom(loadableDataChartDashboardAtom);
   const [isLoading, setIsLoading] = useState(false);
+  const [role] = useAtom(userRoleAtom);
+
+  useEffect(() => {
+    if (role !== "admin" && role !== "operator") {
+      window.location.href = "/dsb/trsksi";
+    }
+  }, [role]);
 
   // const fetchDataChart = async () => {
   //   try {
