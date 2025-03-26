@@ -31,3 +31,9 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   pointer-events: none;
   opacity: 0;
 }
+
+select {
+  appearance: none; /* Hilangkan tampilan bawaan */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
