@@ -11,6 +11,8 @@ import Checkout from "../pages/Checkout";
 import Pembayaran from "../pages/Pembayaran";
 import RiwayatPembayaran from "../pages/RiwayatPembayaran";
 import NotFoundPage from "../components/NotFoundPage";
+import Penarikan from "../pages/Penarikan";
+import ListUser from "../pages/ListUser";
 
 const AppRoutes = () => {
   return (
@@ -28,6 +30,8 @@ const AppRoutes = () => {
             <Route path="trsksi" element={<Transaksi />} />
             <Route path="prfl" element={<Profil />} />
             <Route path="pgtrn" element={<Pengaturan />} />
+            <Route path="pnrkan" element={<Penarikan />} />
+            <Route path="lusr" element={<ListUser />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
