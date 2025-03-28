@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import PageContainer from "../../components/PageContainer";
 import { HiChevronLeft } from "react-icons/hi2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SudahBayar from "../../components/RiwayatPembayaran/SudahBayar";
 import BelumBayar from "../../components/RiwayatPembayaran/BelumBayar";
 
 const RiwayatPembayaran = () => {
   const [selectedTab, setSelectedTab] = useState("sudah-bayar");
+  useEffect(() => {
+    document.title = "Riwayat Pembayaran";
+  }, []);
   return (
     <div className="md:flex md:justify-center md:items-center w-full h-screen">
       <PageContainer>

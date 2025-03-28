@@ -16,8 +16,8 @@ const Header = ({
         <div className="flex items-center justify-between lg:min-w-60">
           {/* logo */}
           <div className="flex items-center justify-start border-gray-200">
-            <a href="/dsb" className="flex ml-2">
-              <img src={Logo} className="h-10" alt="JakMen Logo" />
+            <a href="/dsb" className="flex ml-2 w-52 h-10 items-center">
+              <img src={Logo} className="h-full w-full object-contain" alt="JakMen Logo" />
             </a>
           </div>
           {/* menu */}

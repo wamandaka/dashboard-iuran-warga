@@ -1,7 +1,20 @@
+import { useEffect } from "react";
 import AppRoutes from "./routes/routes";
+import favicon from "./assets/favicon.png";
 // import { useEffect, useState } from "react";
 
 const App = () => {
+  // useEffect(() => {
+  //   document.title = "Jakmen";
+  // }, []);
+
+  useEffect(() => {
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      (link as HTMLLinkElement).href = favicon;
+    }
+  }, []);
+
   // const [logo, setLogo] = useState("");
   // const [favicon, setFavicon] = useState("");
 

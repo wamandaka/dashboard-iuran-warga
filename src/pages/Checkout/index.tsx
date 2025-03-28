@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiChevronLeft } from "react-icons/hi2";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import PageContainer from "../../components/PageContainer";
@@ -13,6 +13,10 @@ const Checkout = () => {
   const handleInfaq = (value: string) => {
     setInfaq(value);
   };
+
+  useEffect(() => {
+    document.title = "Checkout";
+  }, []);
 
   return (
     <>

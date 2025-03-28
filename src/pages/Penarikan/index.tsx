@@ -12,6 +12,10 @@ const Penarikan = () => {
   const [role] = useAtom(userRoleAtom);
 
   useEffect(() => {
+    document.title = "Penarikan";
+  }, []);
+
+  useEffect(() => {
     if (role !== "finance") {
       window.location.href = "/dsb";
     }

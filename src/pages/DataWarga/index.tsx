@@ -32,6 +32,10 @@ const DataWarga = () => {
     infaq: 0,
   });
 
+  useEffect(() => {
+    document.title = "Data Warga";
+  }, []);
+
   const handleShowForm = (warga?: Warga) => {
     if (warga) {
       setEditData(warga);

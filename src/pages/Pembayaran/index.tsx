@@ -1,12 +1,16 @@
 import { useParams } from "react-router-dom";
 import PembayaranPending from "../../components/Pembayaran/PembayaranPending";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PembayaranSuccess from "../../components/Pembayaran/PembayaranSuccess";
 
 const Pembayaran = () => {
-  const [statusPembayaran] = useState("pending");
+  const [statusPembayaran] = useState("success");
   const { nohp } = useParams();
   const noHpNumber = nohp ? parseInt(nohp) : null;
+
+  useEffect(() => {
+    document.title = "Pembayaran";
+  }, []);
 
   return (
     <>

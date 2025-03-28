@@ -1,7 +1,11 @@
 import PageContainerDashboard from "../../components/PageContainerDashboard";
 import logo from "../../assets/logo.png";
+import { useEffect } from "react";
 
 const Pengaturan = () => {
+  useEffect(() => {
+    document.title = "Pengaturan";
+  }, []);
   return (
     <PageContainerDashboard>
       <div className="p-4 bg-white rounded-md shadow-md mt-14">

@@ -1,9 +1,13 @@
 import { HiOutlinePencil, HiPencilSquare } from "react-icons/hi2";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Profil = () => {
   const [ubahSandi, setUbahSandi] = useState(false);
+
+  useEffect(() => {
+    document.title = "Profil";
+  }, []);
 
   const handleUbahSandi = () => {
     setUbahSandi(!ubahSandi);

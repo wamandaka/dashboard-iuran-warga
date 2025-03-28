@@ -17,6 +17,10 @@ const ListUser = () => {
   const [perPage, setPerPage] = useState<number>(10);
 
   useEffect(() => {
+    document.title = "List User";
+  }, []);
+
+  useEffect(() => {
     if (loadableListUsers.state === "loading") {
       setIsLoading(true);
     } else if (loadableListUsers.state === "hasData") {

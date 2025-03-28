@@ -17,6 +17,10 @@ const Dashboard = () => {
   const [role] = useAtom(userRoleAtom);
 
   useEffect(() => {
+    document.title = "Dashboard";
+  }, []);
+
+  useEffect(() => {
     if (role !== "admin" && role !== "operator") {
       window.location.href = "/dsb/trsksi";
     }

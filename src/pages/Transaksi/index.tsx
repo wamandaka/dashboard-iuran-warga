@@ -19,6 +19,10 @@ const Transaksi = () => {
   const [perPage, setPerPage] = useState<number>(10);
 
   useEffect(() => {
+    document.title = "Transaksi";
+  }, []);
+
+  useEffect(() => {
     if (loadableTransaksi.state === "loading") {
       setIsLoading(true);
     } else if (loadableTransaksi.state === "hasData") {
