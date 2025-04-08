@@ -13,6 +13,7 @@ import RiwayatPembayaran from "../pages/RiwayatPembayaran";
 import NotFoundPage from "../components/NotFoundPage";
 import Penarikan from "../pages/Penarikan";
 import ListUser from "../pages/ListUser";
+import RegisterDashboard from "../pages/Auth/Admin/Register";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +25,7 @@ const AppRoutes = () => {
           <Route path="/pembayaran/:nohp" element={<Pembayaran />} />
           <Route path="/info-warga" element={<RiwayatPembayaran />} />
           <Route path="/lgdsb" element={<LoginDashboard />} />
+          <Route path="/dftr" element={<RegisterDashboard />} />
           <Route path="/dsb" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="dw" element={<DataWarga />} />
