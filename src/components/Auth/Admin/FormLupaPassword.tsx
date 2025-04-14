@@ -156,11 +156,11 @@ const FormLupaPassword = ({ onBackToLogin }: { onBackToLogin: () => void }) => {
 
         {currentStep === "inputOTP" && (
           <div>
-            <label htmlFor="otp" className="font-semibold">
+            {/* <label htmlFor="otp" className="font-semibold">
               Masukkan Kode OTP
-            </label>
+            </label> */}
 
-            <div className="flex justify-between gap-2 mt-2">
+            <div className="flex justify-between gap-2 mb-10">
               {otp.map((digit, index) => (
                 <input
                   key={index}
@@ -173,7 +173,7 @@ const FormLupaPassword = ({ onBackToLogin }: { onBackToLogin: () => void }) => {
                   }}
                   // placeholder="-"
                   maxLength={1}
-                  className="w-16 h-16 text-center text-lg font-semibold border border-gray-300 rounded-lg focus:outline-primary"
+                  className="w-16 h-16 text-center text-lg font-semibold border border-gray-300 rounded-lg focus:outline-primary transition duration-300"
                 />
               ))}
             </div>
