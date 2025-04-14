@@ -16,21 +16,21 @@ import FormLogin from "../../../../components/Auth/Admin/FormLogin";
 const users = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Admin User",
     email: "admin@gmail.com",
     password: "123456",
     role: "admin",
   },
   {
     id: 2,
-    name: "Jane Doe",
+    name: "Finance User",
     email: "finance@gmail.com",
     password: "123456",
     role: "finance",
   },
   {
     id: 3,
-    name: "Jhonny Doe",
+    name: "Operator User",
     email: "operator@gmail.com",
     password: "123456",
     role: "operator",
@@ -83,7 +83,12 @@ const LoginDashboard = () => {
 
   const handleLogin = async () => {
     if (!username) {
-      setError("Username wajib diisi");
+      setError("Email wajib diisi");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(username)) {
+      setError("Email tidak valid");
       return;
     }
     if (!password) {
