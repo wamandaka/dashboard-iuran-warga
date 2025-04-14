@@ -53,7 +53,7 @@ const FormLogin = ({
 
           <div className="relative">
             <input
-              type="text"
+              type="email"
               id="email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
