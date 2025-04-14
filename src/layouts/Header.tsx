@@ -1,6 +1,6 @@
 import Logo from "../assets/logo.png";
 import { HiChevronDown, HiMenu, HiX } from "react-icons/hi";
-import { HiBell } from "react-icons/hi2";
+// import { HiBell } from "react-icons/hi2";
 const Header = ({
   toggleSidebar,
   isOpen,
@@ -10,6 +10,9 @@ const Header = ({
   isOpen: boolean;
   selectedNameLink: string;
 }) => {
+  const user = localStorage.getItem("user");
+  const userData = user ? JSON.parse(user) : null;
+
   return (
     <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 shadow-md">
       <div className="px-3 py-3 lg:px-5 lg:pl-3 lg:flex lg:items-center">
@@ -17,7 +20,11 @@ const Header = ({
           {/* logo */}
           <div className="flex items-center justify-start border-gray-200">
             <a href="/dsb" className="flex ml-2 w-52 h-10 items-center">
-              <img src={Logo} className="h-full w-full object-contain" alt="JakMen Logo" />
+              <img
+                src={Logo}
+                className="h-full w-full object-contain"
+                alt="JakMen Logo"
+              />
             </a>
           </div>
           {/* menu */}
@@ -36,17 +43,17 @@ const Header = ({
         </div>
         <div className="w-full h-10 items-center hidden lg:flex border-l border-gray-200 px-5 justify-between lg:max-w-[1980px] mx-auto">
           {selectedNameLink && (
-            <h1 className="text-lg font-semibold text-gray-800 hidden lg:block">
+            <h1 className="text-lg font-semibold text-gray-800 hidden lg:block transition-all duration-300">
               {selectedNameLink}
             </h1>
           )}
           <div className="flex items-center justify-center gap-5">
             <span className="flex items-center justify-center text-primary p-2 border border-primary rounded-md cursor-pointer">
-              <HiBell size={20} />
+              {/* <HiBell size={20} /> */}
             </span>
             <div className="flex items-center px-5 gap-5 border-l border-gray-200 cursor-pointer">
               <div className="flex items-center gap-2">
-                <p>Kevin McCalister</p>
+                <p>{userData?.name}</p>
                 <HiChevronDown />
               </div>
               <div className="flex items-center justify-center">
