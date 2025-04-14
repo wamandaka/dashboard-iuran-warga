@@ -3,14 +3,15 @@ import ImgRegis from "../../../../assets/img-register.png";
 import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
+// import { HiChevronDown } from "react-icons/hi2";
 const RegisterDashboard = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <div>
-      <section className="relative flex flex-wrap h-screen items-center">
+      <section className="relative flex flex-wrap h-screen items-center py-5 sm:py-16 lg:py-5">
         <div
-          className={`relative hidden lg:block h-64 w-full sm:h-96 lg:h-full lg:w-1/2 p-10 z-50`}
+          className={`relative hidden lg:block h-64 w-full sm:h-96 lg:h-full lg:w-1/2 px-10 z-50`}
           // onTransitionEnd={() => setAnimating(false)}
         >
           <img
@@ -20,7 +21,7 @@ const RegisterDashboard = () => {
           />
         </div>
 
-        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-5">
+        <div className="w-full px-4 sm:px-6 lg:w-1/2 lg:px-8">
           <div className="mx-auto max-w-lg text-center">
             <div className="flex justify-center items-center mb-10 lg:mb-5">
               <img src={logo} alt="Logo JakMen" className="w-52" />
@@ -134,43 +135,48 @@ const RegisterDashboard = () => {
             </div>
 
             {/* rt rw */}
-            <div className="flex w-full gap-3 justify-between">
-              {/* rt */}
+            {/* <div className="flex w-full gap-3 justify-between">
               <div className="w-full">
                 <label htmlFor="rt" className="font-semibold">
                   RT
                 </label>
 
                 <div className="relative">
-                  <input
-                    type="number"
+                  <select
+                    name="rt"
                     id="rt"
-                    // value={username}
-                    // onChange={(e) => setUsername(e.target.value)}
                     className="w-full rounded-lg border-gray-200 p-4 text-sm border mt-1 focus:outline-primary"
-                    placeholder="Masukan RT anda"
-                  />
+                  >
+                    <option value="">Pilih RT</option>
+                    <option value="001">001</option>
+                    <option value="002">002</option>
+                  </select>
+                  <span className="absolute inset-y-0 end-0 grid place-content-center px-4 mt-1">
+                    <HiChevronDown size={20} />
+                  </span>
                 </div>
               </div>
-
-              {/* rw */}
               <div className="w-full">
                 <label htmlFor="rw" className="font-semibold">
                   RW
                 </label>
 
                 <div className="relative">
-                  <input
-                    type="number"
+                  <select
+                    name="rw"
                     id="rw"
-                    // value={username}
-                    // onChange={(e) => setUsername(e.target.value)}
                     className="w-full rounded-lg border-gray-200 p-4 text-sm border mt-1 focus:outline-primary"
-                    placeholder="Masukan RW anda"
-                  />
+                  >
+                    <option value="">Pilih RW</option>
+                    <option value="001">001</option>
+                    <option value="002">002</option>
+                  </select>
+                  <span className="absolute inset-y-0 end-0 grid place-content-center px-4 mt-1">
+                    <HiChevronDown size={20} />
+                  </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* kata sandi */}
             <div>
@@ -254,7 +260,7 @@ const RegisterDashboard = () => {
 
               <button
                 type="submit"
-                className="inline-block rounded-lg bg-primary px-5 py-3 mt-5 text-sm font-medium text-white w-full cursor-pointer"
+                className="inline-block rounded-lg bg-primary px-5 py-3 my-5 text-sm font-medium text-white w-full cursor-pointer"
               >
                 Daftar Sekarang
               </button>
