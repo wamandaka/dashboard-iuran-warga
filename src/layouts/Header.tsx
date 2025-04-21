@@ -48,10 +48,10 @@ const Header = ({
             </h1>
           )}
           <div className="flex items-center justify-center gap-5">
-            <span className="flex items-center justify-center text-primary p-2 border border-primary rounded-md cursor-pointer">
-              {/* <HiBell size={20} /> */}
-            </span>
-            <div className="flex items-center px-5 gap-5 border-l border-gray-200 cursor-pointer">
+            {/* <span className="flex items-center justify-center text-primary p-2 border border-primary rounded-md cursor-pointer">
+              <HiBell size={20} />
+            </span> */}
+            <div className="flex items-center px-5 gap-5 cursor-pointer">
               <div className="flex items-center gap-2">
                 <p>{userData?.name}</p>
                 <HiChevronDown />
