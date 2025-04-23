@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { HiChevronLeft } from "react-icons/hi2";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import PageContainer from "../../components/PageContainer";
 
 const Checkout = () => {
-  const [infaq, setInfaq] = useState("");
+  // const [infaq, setInfaq] = useState("");
   const { nohp } = useParams();
   const navigate = useNavigate();
   const handleCheckout = () => {
     navigate(`/pembayaran/${nohp}`);
   };
-  const handleInfaq = (value: string) => {
-    setInfaq(value);
-  };
+  // const handleInfaq = (value: string) => {
+  //   setInfaq(value);
+  // };
 
   useEffect(() => {
     document.title = "Checkout";
@@ -70,7 +70,7 @@ const Checkout = () => {
                       placeholder="Masukkan nominal infaq"
                       className="py-2 px-1 w-full outline-none bg-transparent"
                       // value={infaq}
-                      onChange={(e) => handleInfaq(e.target.value)}
+                      // onChange={(e) => handleInfaq(e.target.value)}
                     />
                   </div>
                 </div>
@@ -83,13 +83,9 @@ const Checkout = () => {
 
             <div className="w-full bg-white p-4 absolute bottom-0 md:rounded-b-2xl">
               <button
-                disabled={infaq === "" ? true : false}
+                // disabled={infaq === "" ? true : false}
                 onClick={handleCheckout}
-                className={`bg-primary text-white py-2 rounded-md w-full  ${
-                  infaq === ""
-                    ? "opacity-50 cursor-not-allowed"
-                    : "opacity-100 cursor-pointer"
-                } `}
+                className={`bg-primary text-white py-2 rounded-md w-full opacity-100 cursor-pointer`}
               >
                 Lanjutkan Pembayaran
               </button>
