@@ -1,6 +1,10 @@
-import { HiOutlinePencil, HiPencilSquare } from "react-icons/hi2";
+import {
+  HiOutlineCheckCircle,
+  HiOutlinePencil,
+  HiPencilSquare,
+} from "react-icons/hi2";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { userRoleAtom } from "../../atoms/authAtoms";
 
@@ -8,6 +12,12 @@ const Profil = () => {
   const [ubahSandi, setUbahSandi] = useState(false);
   const [ubahData, setUbahData] = useState(false);
   const [role] = useAtom(userRoleAtom);
+  const [modalSuccessChangePassword, setModalSuccessChangePassword] =
+    useState(false);
+
+  const imgUrl = useRef<string | null>(
+    "https://randomuser.me/api/portraits/men/1.jpg"
+  );
 
   // State untuk menyimpan data profil
   const [profilData, setProfilData] = useState({
@@ -24,6 +34,7 @@ const Profil = () => {
 
   const handleUbahSandi = () => {
     setUbahSandi(!ubahSandi);
+    setModalSuccessChangePassword(true);
   };
 
   const handleUbahData = () => {
@@ -71,7 +82,7 @@ const Profil = () => {
             <div className="w-full flex flex-col items-center md:w-1/3">
               <div className="my-4 flex justify-center items-center w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden border-2 border-primary">
                 <img
-                  src="https://randomuser.me/api/portraits/men/1.jpg"
+                  src={imgUrl.current || ""}
                   alt="Profile Image"
                   className="w-[90px] h-[90px] md:w-[100px] md:h-[100px] object-cover rounded-full"
                 />
@@ -81,13 +92,24 @@ const Profil = () => {
                 <span className="text-gray-500 text-sm">(1.275kb)</span>
               </p>
               {ubahData && (
-                <button className="flex items-center gap-2 text-primary font-medium border border-primary py-2 px-10 rounded-lg mt-2 hover:bg-primary/10 cursor-pointer">
-                  <HiPencilSquare size={20} />
-                  Pilih Foto
-                </button>
+                <>
+                  <label
+                    htmlFor="ubah-foto"
+                    className="flex items-center gap-2 text-primary font-medium border border-primary py-2 px-10 rounded-lg mt-2 hover:bg-primary/10 cursor-pointer"
+                  >
+                    <HiPencilSquare size={20} />
+                    Pilih Foto
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/jpeg, image/png"
+                    id="ubah-foto"
+                    className="hidden"
+                  />
+                </>
               )}
               <button
-                onClick={handleUbahSandi}
+                onClick={() => setUbahSandi(true)}
                 className="text-primary text-sm font-medium mt-2 cursor-pointer"
               >
                 Ganti Kata Sandi
@@ -192,7 +214,7 @@ const Profil = () => {
       {ubahSandi && (
         <>
           <div
-            onClick={handleUbahSandi}
+            onClick={() => setUbahSandi(false)}
             className="w-full h-screen flex justify-center items-center bg-black/30 absolute top-0 left-0 z-50"
           ></div>
           <div className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 fixed">
@@ -201,7 +223,7 @@ const Profil = () => {
               <div className="w-full p-4 flex items-center justify-between">
                 <p className="text-lg font-semibold">Ganti Kata Sandi</p>
                 <button
-                  onClick={handleUbahSandi}
+                  onClick={() => setUbahSandi(false)}
                   className="text-gray-500 text-2xl cursor-pointer"
                 >
                   &times;
@@ -209,7 +231,7 @@ const Profil = () => {
               </div>
               <div className="w-full h-0.5 bg-gray-200"></div>
               {/* form */}
-              <form action="">
+              <form onSubmit={handleUbahSandi} action="">
                 <div className="p-4">
                   <div className="flex flex-col">
                     <label
@@ -256,7 +278,7 @@ const Profil = () => {
                 </div>
                 <div className="w-full flex justify-end p-4 gap-5">
                   <button
-                    onClick={handleUbahSandi}
+                    onClick={() => setUbahSandi(false)}
                     className="text-red-500 cursor-pointer"
                   >
                     Batalkan
@@ -269,6 +291,37 @@ const Profil = () => {
             </div>
           </div>
         </>
+      )}
+
+      {modalSuccessChangePassword && (
+        <div className="w-full h-screen flex justify-center items-center bg-black/30 absolute top-0 left-0 z-50">
+          <div className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 fixed">
+            <div className="w-sm bg-white rounded-md p-4">
+              <div className="flex my-3">
+                <span className="text-green-400 mx-3">
+                  <HiOutlineCheckCircle size={30} />
+                </span>
+                <div>
+                  <p className="text-lg font-semibold">
+                    Kata Sandi Anda Berhasil Diubah!
+                  </p>
+                  <p className="text-gray-500 text-sm mt-2">
+                    Kata sandi anda telah berhasil diubah klik ‘kembali ke
+                    beranda’ untuk melanjutkan
+                  </p>
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => setModalSuccessChangePassword(false)}
+                      className="text-primary rounded-md cursor-pointer mt-4 font-medium"
+                    >
+                      Kembali ke Beranda
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </PageContainerDashboard>
   );
