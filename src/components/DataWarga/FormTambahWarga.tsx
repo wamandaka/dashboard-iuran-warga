@@ -1,4 +1,4 @@
-import { HiChevronLeft } from "react-icons/hi2";
+import { HiChevronLeft, HiOutlineCheckCircle } from "react-icons/hi2";
 import { Warga } from "../../types/warga";
 
 const FormTambahWarga = ({
@@ -7,12 +7,18 @@ const FormTambahWarga = ({
   newWarga,
   onCancel,
   isEdit,
+  showModalSuccessAddData,
+  // setShowModalSuccessAddData,
+  setShowForm,
 }: {
   tambahWarga: (e: React.FormEvent) => void;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   newWarga: Warga;
   onCancel: () => void;
   isEdit: boolean;
+  showModalSuccessAddData: boolean;
+  // setShowModalSuccessAddData: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
     <div>
@@ -24,7 +30,7 @@ const FormTambahWarga = ({
               <HiChevronLeft className="cursor-pointer" onClick={onCancel} />
             </span>
             <p className="text-2xl font-semibold">
-              {isEdit ? "Ubah Data Warga" : "Tambah Data Warga"}
+              {isEdit ? "Tambah Data Warga" : "Ubah Data Warga"}
             </p>
           </div>
         </div>
@@ -129,11 +135,42 @@ const FormTambahWarga = ({
               type="submit"
               className="bg-primary text-white px-4 py-2 rounded-md cursor-pointer w-1/2 md:w-1/8 hover:bg-primary/90"
             >
-              {isEdit ? "Simpan data" : "Tambah data"}
+              {isEdit ? "Tambah data" : "Simpan data"}
             </button>
           </div>
         </form>
       </div>
+      {/* Modal Success Add Data */}
+      {showModalSuccessAddData && (
+        <div className="w-full h-screen flex justify-center items-center bg-black/30 absolute top-0 left-0 z-50">
+          <div className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 fixed">
+            <div className="w-sm bg-white rounded-md p-4">
+              <div className="flex my-3">
+                <span className="text-green-400 mr-3">
+                  <HiOutlineCheckCircle size={30} />
+                </span>
+                <div>
+                  <p className="text-lg font-semibold">
+                    Data Warga Berhasil {isEdit ? "Ditambahkan" : "Diubah"}
+                  </p>
+                  <p className="text-gray-500 text-sm mt-2">
+                    Anda telah berhasil {isEdit ? "menambahkan" : "mengubah"}{" "}
+                    data warga. Klik ‘kembali ke beranda’ untuk melanjutkan
+                  </p>
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => setShowForm(false)}
+                      className="text-primary rounded-md cursor-pointer mt-4 font-medium"
+                    >
+                      Kembali ke Beranda
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
