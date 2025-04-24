@@ -52,9 +52,10 @@ const Pagination: React.FC<PaginationProps> = ({
       <p>
         {indexOfFirstItem + 1}-{indexOfLastItem} of {filteredData.length} items
       </p>
-      <div className="flex items-center gap-2">
+
+      <div className="flex items-center gap-1 md:gap-2">
         <button
-          className={`p-1 border rounded disabled:opacity-50 ${
+          className={`w-10 h-10 flex justify-center items-center border rounded disabled:opacity-50 ${
             currentPage === 1 ? "text-slate-400" : "cursor-pointer"
           }`}
           onClick={() => onPageChange(currentPage - 1)}
@@ -67,22 +68,22 @@ const Pagination: React.FC<PaginationProps> = ({
           typeof page === "number" ? (
             <button
               key={index}
-              className={`px-3 py-1 border rounded cursor-pointer ${
-                currentPage === page ? "bg-primary text-white" : ""
+              className={`w-10 h-10 border rounded cursor-pointer ${
+                currentPage === page
+                  ? "bg-primary text-white border border-primary"
+                  : ""
               }`}
               onClick={() => onPageChange(page)}
             >
               {page}
             </button>
           ) : (
-            <span key={index} className="px-2">
-              ...
-            </span>
+            <span key={index}>...</span>
           )
         )}
 
         <button
-          className={`p-1 border rounded disabled:opacity-50 ${
+          className={`w-10 h-10 flex justify-center items-center border rounded disabled:opacity-50 ${
             currentPage === totalPages ? "text-slate-400" : "cursor-pointer"
           }`}
           onClick={() => onPageChange(currentPage + 1)}
@@ -91,6 +92,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <HiChevronRight size={24} />
         </button>
       </div>
+
       <select
         name="perPage"
         id="perPage"
