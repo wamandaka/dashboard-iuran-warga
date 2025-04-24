@@ -18,21 +18,21 @@ const users = [
     id: 1,
     name: "Admin User",
     email: "admin@gmail.com",
-    password: "123456",
+    password: "123123",
     role: "admin",
   },
   {
     id: 2,
     name: "Finance User",
     email: "finance@gmail.com",
-    password: "123456",
+    password: "123123",
     role: "finance",
   },
   {
     id: 3,
     name: "Operator User",
     email: "operator@gmail.com",
-    password: "123456",
+    password: "123123",
     role: "operator",
   },
 ];
@@ -73,6 +73,7 @@ const LoginDashboard = () => {
       localStorage.setItem("isLupaPassword", "true");
     } else {
       localStorage.removeItem("isLupaPassword");
+      localStorage.removeItem("currentStep");
     }
   };
 
@@ -104,7 +105,7 @@ const LoginDashboard = () => {
       setError("Email atau password tidak valid");
       return;
     }
-
+    setError(""); // Reset error jika login berhasil
     // Generate token
     const token = generateToken();
 
