@@ -42,8 +42,10 @@ const FormLogin = ({
         )}
       </div>
       <form
-        onSubmit={onLogin}
-        action="#"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onLogin();
+        }}
         className="mx-auto mt-8 mb-0 max-w-md space-y-4"
       >
         <div>
@@ -110,13 +112,6 @@ const FormLogin = ({
         </div>
 
         <div className="flex items-center justify-between">
-          {/* <p className="text-sm text-gray-500">
-                No account?
-                <a className="underline" href="#">
-                  Sign up
-                </a>
-              </p> */}
-
           <button
             type="submit"
             className="inline-block rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white w-full cursor-pointer"
