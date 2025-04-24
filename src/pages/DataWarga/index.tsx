@@ -20,6 +20,7 @@ const DataWarga = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editData, setEditData] = useState<Warga | null>(null);
+  const [showModalSuccessAddData, setShowModalSuccessAddData] = useState(false);
   // State untuk input form
   const [newWarga, setNewWarga] = useState<Warga>({
     id: 0,
@@ -87,7 +88,8 @@ const DataWarga = () => {
     };
 
     setData([...data, newData]); // Tambah ke data utama
-    setShowForm(!showForm); // Tutup form
+    // setShowForm(!showForm); // Tutup
+    setShowModalSuccessAddData(true); // Tampilkan modal sukses
   };
 
   // Edit Data Warga
@@ -95,7 +97,8 @@ const DataWarga = () => {
     e.preventDefault();
     const updatedData = data.map((w) => (w.id === newWarga.id ? newWarga : w));
     setData(updatedData);
-    setShowForm(!showForm); // Tutup form
+    // setShowForm(!showForm); // Tutup form
+    setShowModalSuccessAddData(true); // Tampilkan modal sukses
   };
 
   const deleteWarga = (id: number) => {
@@ -122,11 +125,14 @@ const DataWarga = () => {
     <PageContainerDashboard>
       {showForm ? (
         <FormTambahWarga
+          setShowForm={setShowForm}
+          showModalSuccessAddData={showModalSuccessAddData}
+          // setShowModalSuccessAddData={setShowModalSuccessAddData}
           tambahWarga={editData ? editWarga : tambahWarga}
           newWarga={newWarga}
           handleInputChange={handleInputChange}
           onCancel={handleShowForm}
-          isEdit={!!editData}
+          isEdit={!editData}
         />
       ) : (
         <>
