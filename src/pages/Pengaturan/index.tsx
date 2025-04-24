@@ -1,5 +1,6 @@
 import PageContainerDashboard from "../../components/PageContainerDashboard";
 import logo from "../../assets/logo.png";
+import favicon from "../../assets/favicon.png";
 import { useEffect } from "react";
 
 const Pengaturan = () => {
@@ -23,12 +24,21 @@ const Pengaturan = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 flex items-center">
-                <img src="/favicon.png" alt="Favicon" />
+                <img src={favicon} alt="Favicon" />
               </div>
               <div className="">
-                <button className="border border-primary text-primary rounded-md py-1 px-3 cursor-pointer text-sm">
+                <label
+                  htmlFor="upload-favicon"
+                  className="border border-primary text-primary rounded-md py-1 px-3 cursor-pointer text-sm"
+                >
                   Upload Favicon
-                </button>
+                </label>
+                <input
+                  type="file"
+                  accept="image/jpeg, image/png"
+                  id="upload-favicon"
+                  className="hidden"
+                />
                 <p className="text-sm text-slate-400">Ukuran maks 5mb</p>
               </div>
             </div>
@@ -51,9 +61,18 @@ const Pengaturan = () => {
                 <img src={logo} alt="Logo" />
               </div>
               <div className="">
-                <button className="border border-primary text-primary rounded-md py-1 px-3 cursor-pointer text-sm">
+                <label
+                  htmlFor="upload-logo"
+                  className="border border-primary text-primary rounded-md py-1 px-3 cursor-pointer text-sm"
+                >
                   Upload Logo
-                </button>
+                </label>
+                <input
+                  type="file"
+                  accept="image/jpeg, image/png"
+                  id="upload-logo"
+                  className="hidden"
+                />
                 <p className="text-sm text-slate-400">Ukuran maks 5mb</p>
               </div>
             </div>
