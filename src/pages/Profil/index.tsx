@@ -7,17 +7,50 @@ import PageContainerDashboard from "../../components/PageContainerDashboard";
 import { useEffect, useRef, useState } from "react";
 import { useAtom } from "jotai";
 import { userRoleAtom } from "../../atoms/authAtoms";
+import ImageCropper from "../../components/Profil/ImageCropper";
 
 const Profil = () => {
+  const imgUrl = useRef<string | null>(
+    "https://randomuser.me/api/portraits/men/1.jpg"
+  );
   const [ubahSandi, setUbahSandi] = useState(false);
   const [ubahData, setUbahData] = useState(false);
   const [role] = useAtom(userRoleAtom);
   const [modalSuccessChangePassword, setModalSuccessChangePassword] =
     useState(false);
+  const [image, setImage] = useState<string | null>(imgUrl.current);
+  const [showModalCropImage, setShowModalCropImage] = useState<boolean>(false);
 
-  const imgUrl = useRef<string | null>(
-    "https://randomuser.me/api/portraits/men/1.jpg"
-  );
+  const onImageSelected = (image: string) => {
+    setImage(image);
+    setShowModalCropImage(true);
+  };
+
+  const onCropDone = (croppedImage: string) => {
+    setImage(croppedImage);
+    setShowModalCropImage(false);
+  };
+
+  const onCropCancel = () => {
+    setShowModalCropImage(false);
+    setImage(imgUrl.current);
+  };
+
+  // const handleDelete = () => {
+  //   setImage("");
+  //   setCurrentPage("");
+  // };
+
+  const handleOnCHange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        onImageSelected(reader.result as string);
+      };
+    }
+  };
 
   // State untuk menyimpan data profil
   const [profilData, setProfilData] = useState({
@@ -82,15 +115,15 @@ const Profil = () => {
             <div className="w-full flex flex-col items-center md:w-1/3">
               <div className="my-4 flex justify-center items-center w-[100px] h-[100px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden border-2 border-primary">
                 <img
-                  src={imgUrl.current || ""}
+                  src={image || ""}
                   alt="Profile Image"
                   className="w-[90px] h-[90px] md:w-[100px] md:h-[100px] object-cover rounded-full"
                 />
               </div>
-              <p>
+              {/* <p>
                 kevin.jpg{" "}
                 <span className="text-gray-500 text-sm">(1.275kb)</span>
-              </p>
+              </p> */}
               {ubahData && (
                 <>
                   <label
@@ -105,6 +138,7 @@ const Profil = () => {
                     accept="image/jpeg, image/png"
                     id="ubah-foto"
                     className="hidden"
+                    onChange={handleOnCHange}
                   />
                 </>
               )}
@@ -152,59 +186,129 @@ const Profil = () => {
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row md:justify-between w-full gap-3 md:gap-3">
-                  <div className="md:w-1/2">
-                    <p className="text-gray-400 text-sm font-medium">
-                      Nomor Rekening
-                    </p>
-                    {ubahData ? (
-                      <input
-                        type="text"
-                        name="noRek"
-                        value={profilData.noRek}
-                        onChange={handleInputChange}
-                        className="border border-gray-300 rounded-md p-2 w-full"
-                      />
-                    ) : (
-                      <p className="font-semibold">{profilData.noRek}</p>
-                    )}
-                  </div>
-                  <div className="md:w-1/2">
-                    <p className="text-gray-400 text-sm font-medium">Role</p>
-                    <p className="font-semibold capitalize">{role}</p>
-                  </div>
+                  {role === "admin" && (
+                    <>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Nomor Rekening
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="noRek"
+                            value={profilData.noRek}
+                            onChange={handleInputChange}
+                            className="border border-gray-300 rounded-md p-2 w-full"
+                          />
+                        ) : (
+                          <p className="font-semibold">{profilData.noRek}</p>
+                        )}
+                      </div>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Role
+                        </p>
+                        <p className="font-semibold capitalize">{role}</p>
+                      </div>
+                    </>
+                  )}
+                  {role === "operator" && (
+                    <>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Role
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="role"
+                            value={role}
+                            className="border border-gray-300 rounded-md p-2 w-full cursor-not-allowed bg-slate-200 capitalize"
+                            disabled
+                          />
+                        ) : (
+                          <p className="font-semibold capitalize">{role}</p>
+                        )}
+                      </div>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Kode Pos
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="kodePos"
+                            value={profilData.kodePos}
+                            onChange={handleInputChange}
+                            className="border border-gray-300 rounded-md p-2 w-full"
+                          />
+                        ) : (
+                          <p className="font-semibold">{profilData.kodePos}</p>
+                        )}
+                      </div>
+                    </>
+                  )}
                 </div>
-                <div className="flex flex-col md:flex-row md:justify-between w-full gap-3 md:gap-3">
-                  <div className="md:w-1/2">
-                    <p className="text-gray-400 text-sm font-medium">
-                      Kode Pos
-                    </p>
-                    {ubahData ? (
-                      <input
-                        type="text"
-                        name="kodePos"
-                        value={profilData.kodePos}
-                        onChange={handleInputChange}
-                        className="border border-gray-300 rounded-md p-2 w-full"
-                      />
-                    ) : (
-                      <p className="font-semibold">{profilData.kodePos}</p>
-                    )}
+                {role === "admin" && (
+                  <div className="flex flex-col md:flex-row md:justify-between w-full gap-3 md:gap-3">
+                    <>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Kode Pos
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="kodePos"
+                            value={profilData.kodePos}
+                            onChange={handleInputChange}
+                            className="border border-gray-300 rounded-md p-2 w-full"
+                          />
+                        ) : (
+                          <p className="font-semibold">{profilData.kodePos}</p>
+                        )}
+                      </div>
+                      <div className="md:w-1/2">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Alamat
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="alamat"
+                            value={profilData.alamat}
+                            onChange={handleInputChange}
+                            className="border border-gray-300 rounded-md p-2 w-full"
+                          />
+                        ) : (
+                          <p className="font-semibold">{profilData.alamat}</p>
+                        )}
+                      </div>
+                    </>
                   </div>
-                  <div className="md:w-1/2">
-                    <p className="text-gray-400 text-sm font-medium">Alamat</p>
-                    {ubahData ? (
-                      <input
-                        type="text"
-                        name="alamat"
-                        value={profilData.alamat}
-                        onChange={handleInputChange}
-                        className="border border-gray-300 rounded-md p-2 w-full"
-                      />
-                    ) : (
-                      <p className="font-semibold">{profilData.alamat}</p>
-                    )}
+                )}
+                {role === "operator" && (
+                  <div className="flex flex-col md:flex-row md:justify-between w-full gap-3 md:gap-3">
+                    <>
+                      <div className="w-full">
+                        <p className="text-gray-400 text-sm font-medium">
+                          Alamat
+                        </p>
+                        {ubahData ? (
+                          <input
+                            type="text"
+                            name="alamat"
+                            value={profilData.alamat}
+                            onChange={handleInputChange}
+                            className="border border-gray-300 rounded-md p-2 w-full"
+                          />
+                        ) : (
+                          <p className="font-semibold">{profilData.alamat}</p>
+                        )}
+                      </div>
+                    </>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -322,6 +426,16 @@ const Profil = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {showModalCropImage && (
+        <>
+          <ImageCropper
+            image={image || ""}
+            onCropCancel={onCropCancel}
+            onCropDone={onCropDone}
+          />
+        </>
       )}
     </PageContainerDashboard>
   );
