@@ -1,14 +1,25 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import PageContainerDashboard from "../../components/PageContainerDashboard";
 import { HiCloudArrowUp } from "react-icons/hi2";
 import { toast, ToastContainer } from "react-toastify";
 import Select from "react-select";
 import { useAtom } from "jotai";
 import { userRoleAtom } from "../../atoms/authAtoms";
+import { useDropzone } from "react-dropzone";
+import logger from "../../utils/logger";
+
+interface FileError {
+  code: string;
+  message: string;
+}
+
+interface FileValidator {
+  (file: File): FileError | null;
+}
 
 const Penarikan = () => {
-  const [file, setFile] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [image, setImage] = useState("");
   const [role] = useAtom(userRoleAtom);
 
   useEffect(() => {
@@ -21,30 +32,112 @@ const Penarikan = () => {
     }
   }, [role]);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = event.target.files ? event.target.files[0] : null;
-
-    if (selectedFile) {
-      // Validasi tipe file
-      const validTypes = ["image/jpeg", "image/png"];
-      if (!validTypes.includes(selectedFile.type)) {
-        toast.warn("Format file tidak didukung! Hanya JPG dan PNG.");
-        return;
-      }
-
-      // Validasi ukuran file (maks 5MB)
-      if (selectedFile.size > 5 * 1024 * 1024) {
-        toast.warn("Ukuran file terlalu besar! Maksimum 5MB.");
-        return;
-      }
-
-      setFile(selectedFile);
-
-      // Buat URL preview gambar
-      const fileURL = URL.createObjectURL(selectedFile);
-      setPreview(fileURL);
+  const sizeMaximum = 5 * 1024 * 1024; // 5MB
+  // custom validator for file size
+  const maxSize: FileValidator = (file) => {
+    if (file.size > sizeMaximum) {
+      toast.error("Ukuran file terlalu besar. Maksimum 5MB.");
+      // logger.error("File size exceeds maximum limit:", file.size);
+      return {
+        code: "file-too-large",
+        message: "File size is too large. Maximum 5MB.",
+      };
     }
+    return null;
   };
+
+  // Validator untuk jumlah file
+  // const validateSingleFile: FileValidator = (file) => {
+  //   if (file instanceof File) {
+  //     toast.error("Hanya satu file yang diperbolehkan.");
+  //     return {
+  //       code: "too-many-files",
+  //       message: "Hanya satu file yang diperbolehkan.",
+  //     };
+  //   }
+  //   return null;
+  // };
+
+  const customValidator: FileValidator = (file) => {
+    const sizeError = maxSize(file);
+    if (sizeError) {
+      return sizeError;
+    }
+    // const singleFileError = validateSingleFile(file);
+    // if (singleFileError) {
+    //   return singleFileError;
+    // }
+    return null;
+  };
+
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    if (acceptedFiles.length > 1) {
+      toast.error("Hanya satu file yang diperbolehkan.");
+      return;
+    }
+    logger.info("Accepted files:", acceptedFiles);
+    const file = acceptedFiles[0];
+    if (!(file instanceof Blob)) {
+      console.error("The dropped file is not a valid Blob.");
+      toast.error("File tidak valid.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const binaryStr = reader.result;
+      setImage(binaryStr as string);
+      setShowImage(true);
+      logger.info("File preview URL:", binaryStr);
+    };
+    reader.readAsDataURL(file);
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive, fileRejections } =
+    useDropzone({
+      onDrop,
+      validator: customValidator,
+      // maxFiles: 1,
+      accept: {
+        "image/*": [".jpeg", ".png", ".jpg"],
+      },
+    });
+
+  const fileRejectionItems = fileRejections.map(({ file, errors }) => (
+    <li key={file.path}>
+      {/* {file.path} - {file.size} bytes */}
+      <ul className="list-disc list-inside text-sm text-red-400">
+        {errors.map((e) => (
+          <li key={e.code}>{e.message}</li>
+        ))}
+      </ul>
+    </li>
+  ));
+
+  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const selectedFile = event.target.files ? event.target.files[0] : null;
+
+  //   if (selectedFile) {
+  //     // Validasi tipe file
+  //     const validTypes = ["image/jpeg", "image/png"];
+  //     if (!validTypes.includes(selectedFile.type)) {
+  //       toast.warn("Format file tidak didukung! Hanya JPG dan PNG.");
+  //       return;
+  //     }
+
+  //     // Validasi ukuran file (maks 5MB)
+  //     if (selectedFile.size > 5 * 1024 * 1024) {
+  //       toast.warn("Ukuran file terlalu besar! Maksimum 5MB.");
+  //       return;
+  //     }
+
+  //     setFile(selectedFile);
+
+  //     // Buat URL preview gambar
+  //     const fileURL = URL.createObjectURL(selectedFile);
+  //     setPreview(fileURL);
+  //   }
+  // };
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
@@ -63,7 +156,7 @@ const Penarikan = () => {
             </div>
           </div>
         </div>
-        <div className="w-full p-4 bg-white space-y-3">
+        <div className="w-full p-4 bg-white space-y-5">
           <div className="flex flex-col w-full gap-1">
             <label htmlFor="NamaOrganisasi" className="font-medium">
               Nama Organisasi
@@ -123,7 +216,46 @@ const Penarikan = () => {
             <label htmlFor="BuktiPembayaran" className="font-medium">
               Bukti Pembayaran
             </label>
-            <div className="border-2 border-dashed border-gray-300 rounded-md w-full mx-auto text-center">
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              {isDragActive ? (
+                <p className="w-full bg-slate-100 border border-dashed p-24 rounded-md text-center cursor-pointer animate-pulse">
+                  Drop the files here ...
+                </p>
+              ) : (
+                <div
+                  className={`w-full bg-slate-100 border border-dashed border-gray-400 ${
+                    image ? "p-1" : "p-10"
+                  } rounded-md text-center cursor-pointer flex flex-col items-center`}
+                >
+                  {showImage ? (
+                    <img
+                      src={image}
+                      alt="preview"
+                      className="w-32 h-auto my-5 border border-gray-300 rounded-md"
+                    />
+                  ) : (
+                    <>
+                      <HiCloudArrowUp
+                        size={24}
+                        className="text-gray-300 mb-3"
+                      />
+                      <p>
+                        <span className="text-primary font-semibold">
+                          Pilih File
+                        </span>{" "}
+                        untuk diunggah
+                      </p>
+                      <p className="text-gray-500 mt-3">
+                        format hanya jpg, jpeg, png (Maks 5MB)
+                      </p>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+            <ul>{fileRejectionItems}</ul>
+            {/* <div className="border-2 border-dashed border-gray-300 rounded-md w-full mx-auto text-center">
               <label
                 htmlFor="file-upload"
                 className="cursor-pointer flex flex-col items-center p-6"
@@ -142,7 +274,7 @@ const Penarikan = () => {
                 ) : (
                   <>
                     <p className="text-gray-500 text-sm">
-                      <span className="text-blue-400 font-medium">
+                      <span className="text-primary font-medium">
                         Pilih file
                       </span>{" "}
                       untuk diunggah
@@ -160,7 +292,7 @@ const Penarikan = () => {
                 accept="image/jpeg, image/png"
                 onChange={handleFileChange}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="w-full h-0.5 bg-gray-200"></div>
@@ -172,7 +304,7 @@ const Penarikan = () => {
             Simpan Data
           </button>
         </div>
-        <ToastContainer position="top-right" autoClose={2000} hideProgressBar />
+        <ToastContainer position="top-right" autoClose={4000} />
       </PageContainerDashboard>
     </div>
   );
