@@ -16,7 +16,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
   const [zoom, setZoom] = useState(1);
   const [croppedArea, setCroppedArea] = useState<Area | undefined>(undefined);
 
-  const onCropComplete = (croppedArea: Area, croppedAreaPixels: Area) => {
+  const onCropComplete = (croppedAreaPixels: Area) => {
     setCroppedArea(croppedAreaPixels);
   };
 
