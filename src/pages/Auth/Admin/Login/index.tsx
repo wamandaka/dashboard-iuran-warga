@@ -120,12 +120,14 @@ const LoginDashboard = () => {
     if (user.role === "admin" || user.role === "operator") {
       // Redirect ke dashboard setelah 2 detik
       setTimeout(() => {
-        navigate("/dsb");
+        // navigate("/dsb");
+        window.location.href = "/dsb";
       }, 2000);
     } else if (user.role === "finance") {
       // Redirect ke dashboard setelah 2 detik
       setTimeout(() => {
-        navigate("/dsb/trsksi");
+        // navigate("/dsb/trsksi");
+        window.location.href = "/dsb/trsksi";
       }, 2000);
     }
   };
