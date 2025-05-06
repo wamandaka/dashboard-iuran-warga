@@ -16,7 +16,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
   const [zoom, setZoom] = useState(1);
   const [croppedArea, setCroppedArea] = useState<Area | undefined>(undefined);
 
-  const onCropComplete = (croppedAreaPixels: Area) => {
+  const onCropComplete = (_: Area, croppedAreaPixels: Area) => {
     setCroppedArea(croppedAreaPixels);
   };
 
@@ -59,7 +59,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
           </h2>
           <button
             onClick={onCropCancel}
-            className="text-gray-400 hover:text-gray-600"
+            className="text-gray-400 hover:text-gray-600 cursor-pointer"
           >
             ✕
           </button>
@@ -90,7 +90,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
         <div className="flex justify-end gap-4 p-4">
           <button
             onClick={onCropCancel}
-            className="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-200 rounded-lg hover:bg-gray-300"
+            className="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-200 rounded-lg hover:bg-gray-300 cursor-pointer"
           >
             Batal
           </button>
@@ -102,7 +102,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({
                 handleCropComplete(croppedArea);
               }
             }}
-            className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark"
+            className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary-dark cursor-pointer"
           >
             Simpan
           </button>
