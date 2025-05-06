@@ -219,13 +219,13 @@ const Penarikan = () => {
             <div {...getRootProps()}>
               <input {...getInputProps()} />
               {isDragActive ? (
-                <p className="w-full bg-slate-100 border border-dashed p-24 rounded-md text-center cursor-pointer animate-pulse">
-                  Drop the files here ...
+                <p className="w-full bg-slate-100 border border-dashed p-20 rounded-md text-center cursor-pointer animate-pulse">
+                  Lepas file untuk mengunggah
                 </p>
               ) : (
                 <div
                   className={`w-full bg-slate-100 border border-dashed border-gray-400 ${
-                    image ? "p-1" : "p-10"
+                    image ? "p-1" : "p-11"
                   } rounded-md text-center cursor-pointer flex flex-col items-center`}
                 >
                   {showImage ? (
