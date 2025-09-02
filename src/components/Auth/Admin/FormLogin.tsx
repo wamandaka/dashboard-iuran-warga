@@ -52,16 +52,30 @@ const FormLogin = ({
           <label htmlFor="email" className="font-semibold">
             Alamat Email
           </label>
+          <select
+            name="email"
+            id="email"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border mt-1 focus:outline-primary"
+          >
+            <option value="" disabled>
+              Pilih Alamat Email
+            </option>
+            <option value="admin@gmail.com">Admin</option>
+            <option value="finance@gmail.com">Finance</option>
+            <option value="operator@gmail.com">Operator</option>
+          </select>
 
           <div className="relative">
-            <input
+            {/* <input
               type="email"
               id="email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm border mt-1 focus:outline-primary"
               placeholder="Masukan alamat email anda"
-            />
+            /> */}
 
             <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
               {/* icon */}

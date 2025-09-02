@@ -71,6 +71,9 @@ const LoginWarga = () => {
             >
               Info Warga
             </Link>
+            <Link to="/dsb" className="text-primary font-semibold mt-7 text-sm">
+              Pergi ke dashboard
+            </Link>
           </div>
         </div>
       </div>

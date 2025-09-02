@@ -2,7 +2,7 @@ import { atom } from "jotai";
 
 // State untuk username & password
 export const emailAtom = atom("");
-export const passwordAtom = atom("");
+export const passwordAtom = atom("123123");
 
 // State untuk error message
 export const errorAtom = atom("");
