@@ -1,6 +1,6 @@
 import { AiOutlineDollarCircle } from "react-icons/ai";
-import { HiOutlineChevronDown, HiTrendingUp } from "react-icons/hi";
-import { HiCalendarDays, HiOutlineUserCircle } from "react-icons/hi2";
+import {  HiTrendingUp } from "react-icons/hi";
+import {  HiOutlineUserCircle } from "react-icons/hi2";
 import DashboardChart from "../../components/Dashboard/DashboardChart";
 import { DataChart } from "../../types/dashboard";
 import { useEffect, useState } from "react";
@@ -139,11 +139,11 @@ const Dashboard = () => {
                   Bulan Lalu
                 </button>
               </div>
-              <button className="flex items-center gap-2 px-3 py-1 border rounded-md text-secondary border-secondary hover:bg-secondary/10 transition w-56">
+              {/* <button className="flex items-center gap-2 px-3 py-1 border rounded-md text-secondary border-secondary hover:bg-secondary/10 transition w-56">
                 <HiCalendarDays size={20} />
                 <p>Pilih Bulan & Tahun</p>
                 <HiOutlineChevronDown />
-              </button>
+              </button> */}
             </div>
             <p className="my-5">Dalam Rupiah</p>
             {isLoading && <p>Loading...</p>}
