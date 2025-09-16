@@ -32,7 +32,7 @@ const FormLogin = ({
         </div>
         <h1 className="text-2xl font-bold sm:text-3xl">Selamat Datang!</h1>
 
-        <p className="mt-3 text-gray-500">Silakan masuk ke akun JakMen-mu</p>
+        <p className="mt-3 text-gray-500">Silakan masuk ke akun anda</p>
       </div>
       <div>
         {error && (

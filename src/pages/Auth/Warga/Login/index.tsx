@@ -35,8 +35,9 @@ const LoginWarga = () => {
           <div className="flex flex-col items-center">
             <img src={Logo} alt="Logo" className="w-56" />
             <p className="font-[600] text-center mt-6 px-5">
-              Pelayanan Pengelolaan Lingkungan RT07/RW03. Kel Kelapa Dua. Kec
-              Kebon Jeruk. Jakarta Barat
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ea optio eos corporis accusantium asperiores inventore praesentium
+              recusandae, odit explicabo?
             </p>
           </div>
 
