@@ -26,6 +26,7 @@ const AppRoutes = () => {
           <Route path="/info-warga" element={<RiwayatPembayaran />} />
           <Route path="/lgdsb" element={<LoginDashboard />} />
           <Route path="/dftr" element={<RegisterDashboard />} />
+
           <Route path="/dsb" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="dw" element={<DataWarga />} />
